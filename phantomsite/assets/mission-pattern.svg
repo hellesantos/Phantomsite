@@ -1,0 +1,24 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#111111"/>
+  <g opacity="0.8">
+    <path d="M0 130H800" stroke="#D31317" stroke-width="8"/>
+    <path d="M0 260H800" stroke="#D31317" stroke-width="8"/>
+    <path d="M0 390H800" stroke="#D31317" stroke-width="8"/>
+    <path d="M0 520H800" stroke="#D31317" stroke-width="8"/>
+    <path d="M0 650H800" stroke="#D31317" stroke-width="8"/>
+    <path d="M130 0V800" stroke="#D31317" stroke-width="8"/>
+    <path d="M260 0V800" stroke="#D31317" stroke-width="8"/>
+    <path d="M390 0V800" stroke="#D31317" stroke-width="8"/>
+    <path d="M520 0V800" stroke="#D31317" stroke-width="8"/>
+    <path d="M650 0V800" stroke="#D31317" stroke-width="8"/>
+  </g>
+  <g opacity="0.85">
+    <path d="M120 420L200 310L280 420L200 530L120 420Z" fill="#D31317"/>
+    <path d="M520 250L600 140L680 250L600 360L520 250Z" fill="#F3F3F3"/>
+    <circle cx="640" cy="560" r="76" fill="#D31317"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M120 120L220 70L270 170L190 220L120 120Z" fill="#F3F3F3"/>
+    <path d="M360 700L430 620L520 705L440 785L360 700Z" fill="#F3F3F3"/>
+  </g>
+</svg>

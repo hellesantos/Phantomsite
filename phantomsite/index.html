@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Convite interativo para o aniversário da Nena com estética de interface de missão e UI de videogame."
+    />
+    <title>MISSION: NENA'S BIRTHDAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="flash" aria-hidden="true"></div>
+
+    <div class="login-screen" id="loginScreen" aria-live="polite">
+      <div class="login-card">
+        <p class="micro-label">entry access</p>
+        <h2>mission login</h2>
+        <form id="loginForm" class="login-form">
+          <label>
+            <span>nome</span>
+            <input id="loginName" type="text" placeholder="Digite seu nome" required />
+          </label>
+          <label>
+            <span>senha</span>
+            <input id="loginPassword" type="password" placeholder="Digite sua senha" required />
+          </label>
+          <button class="primary-button small" type="submit">[ entrar ]</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="page-shell">
+      <header class="top-ui">
+        <div class="brand-mark">NENA'S BIRTHDAY</div>
+        <div class="user-chip" id="userChip" hidden>
+          WELCOME, <span id="userNameChip">GUEST</span>
+        </div>
+        <button class="admin-toggle" id="toggleAdminBtn" type="button">ORGANIZER PANEL</button>
+        <button class="admin-toggle" id="logoutBtn" type="button">LOGOUT</button>
+      </header>
+
+      <nav class="mission-nav" aria-label="Navegação da missão">
+        <button class="nav-item is-active" type="button" data-target="missionScreen">01 / MISSION</button>
+        <button class="nav-item" type="button" data-target="callingCard">02 / TARGET</button>
+        <button class="nav-item" type="button" data-target="guests">03 / GUESTS</button>
+        <button class="nav-item" type="button" data-target="rsvp">04 / RSVP</button>
+        <button class="nav-item" type="button" data-target="contact">05 / CONTACT</button>
+      </nav>
+
+      <main class="layout">
+        <section class="opening-screen" id="openingScreen" aria-labelledby="openingTitle">
+          <div class="opening-overlay" aria-hidden="true"></div>
+
+          <div class="opening-content">
+            <div class="startup-block">
+              <span class="p5-label">SYSTEM ONLINE</span>
+              <span class="p5-label">INCOMING TRANSMISSION...</span>
+            </div>
+
+            <div class="target-callout">
+              <span class="p5-label">TARGET IDENTIFIED</span>
+              <h2 class="target-name" id="openingTitle">NENA</h2>
+            </div>
+
+            <div class="mission-title-wrap">
+              <span class="mission-brief">MISSION AVAILABLE</span>
+              <h1>TAKE YOUR<br />GIFT</h1>
+              <h2>FOR NENA'S<br />BIRTHDAY</h2>
+            </div>
+
+            <button class="primary-button" id="acceptMissionBtn" type="button">[ ACCEPT MISSION ]</button>
+          </div>
+        </section>
+
+        <section class="mission-screen panel" id="missionScreen" aria-label="Briefing da missão">
+          <div class="ticker-label">MISSION AVAILABLE</div>
+
+          <div class="mission-copy">
+            <span class="mini-kicker">target</span>
+            <h2>NENA</h2>
+            <div class="mission-number">01</div>
+          </div>
+
+          <div class="mission-meta">
+            <div class="meta-row">
+              <span>OBJECTIVE</span>
+              <strong>ATTEND THE BIRTHDAY PARTY</strong>
+            </div>
+            <div class="meta-row">
+              <span>STATUS</span>
+              <strong>AWAITING CONFIRMATION</strong>
+            </div>
+            <div class="meta-row">
+              <span>MISSION</span>
+              <strong>BIRTHDAY PARTY</strong>
+            </div>
+          </div>
+
+          <button class="secondary-button" id="openLocationBtn" type="button">OPEN MAP →</button>
+        </section>
+
+        <section class="calling-card panel" id="callingCard" aria-label="Calling card da missão">
+          <div class="calling-bar">
+            <span>target</span>
+            <span>mission</span>
+          </div>
+
+          <div class="calling-main">
+            <div class="calling-name-block">
+              <span class="mini-kicker">NENA</span>
+              <h3>NENA</h3>
+            </div>
+
+            <div class="calling-data">
+              <div class="data-unit">
+                <span>date</span>
+                <strong>25 / 11</strong>
+              </div>
+              <div class="data-unit">
+                <span>time</span>
+                <strong>20:00</strong>
+              </div>
+              <div class="data-unit wide">
+                <span>location</span>
+                <strong>PASTELARIA GIMENES</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="briefing panel" aria-label="Resumo da missão">
+          <div class="panel-header">
+            <span class="panel-tag">MISSION BRIEFING</span>
+            <h3>OBJECTIVE</h3>
+          </div>
+
+          <div class="brief-grid">
+            <div class="brief-block red-block">
+              <span>objective</span>
+              <strong>ATTEND NENA'S BIRTHDAY</strong>
+            </div>
+            <div class="brief-block dark-block">
+              <span>status</span>
+              <strong>AWAITING CONFIRMATION</strong>
+            </div>
+            <div class="brief-block dark-block wide">
+              <span>mission type</span>
+              <strong>PARTY / CELEBRATION / FRIENDS</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="event-board panel" aria-label="Dados do evento">
+          <div class="panel-header">
+            <span class="panel-tag">EVENT DATA</span>
+            <h3>DETAILS</h3>
+          </div>
+
+          <div class="event-grid">
+            <article class="event-item date-item">
+              <span>date</span>
+              <strong>15</strong>
+              <em>october</em>
+            </article>
+            <article class="event-item time-item">
+              <span>time</span>
+              <strong>19:30</strong>
+            </article>
+            <article class="event-item location-item">
+              <span>location</span>
+              <strong>pastelaria gimenes</strong>
+            </article>
+            <article class="event-item map-item">
+              <span>map</span>
+              <button class="secondary-button tiny" type="button">OPEN MAP →</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="selector panel" aria-label="Seleção de convidados">
+          <div class="panel-header">
+            <span class="panel-tag">GUEST SELECTOR</span>
+            <h3>OPERATIVES</h3>
+          </div>
+
+          <div class="selector-shell">
+            <div class="featured-guest">
+              <div class="featured-badge">SELECTED</div>
+              <div class="featured-name">HELENA</div>
+              <div class="featured-status">HOST</div>
+            </div>
+
+            <div class="selector-strip">
+              <div class="mini-slot selected"><span>01</span><strong>HELENA</strong></div>
+              <div class="mini-slot"><span>02</span><strong>MATTHEW</strong></div>
+              <div class="mini-slot"><span>03</span><strong>JOÃO</strong></div>
+              <div class="mini-slot"><span>04</span><strong>THAEMY</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="guest-panel panel" id="guests" aria-label="Operative database">
+          <div class="panel-header">
+            <span class="panel-tag">OPERATIVE DATABASE</span>
+            <h3>GUESTS</h3>
+          </div>
+          <div class="guest-list" id="guestList" aria-live="polite"></div>
+        </section>
+
+        <section class="rsvp panel" id="rsvp">
+          <div class="panel-header">
+            <span class="panel-tag">MISSION CONFIRMATION</span>
+            <h3>R.S.V.P.</h3>
+          </div>
+
+          <div class="rsvp-box">
+            <h4>WILL YOU<br />ACCEPT THE MISSION?</h4>
+            <div class="rsvp-actions">
+              <button class="status-button accept" type="button" data-response="accept">[ ACCEPT ]</button>
+              <button class="status-button decline" type="button" data-response="decline">[ DECLINE ]</button>
+            </div>
+          </div>
+
+          <form id="accessForm" class="access-form">
+            <div class="access-header">
+              <span class="panel-tag">GUEST INFO</span>
+              <h4>DETAILS</h4>
+            </div>
+
+            <label>
+              <span>SEU NOME</span>
+              <input id="attendeeName" type="text" placeholder="Seu nome completo" required />
+            </label>
+
+            <label>
+              <span>VAI LEVAR ACOMPANHANTE?</span>
+              <select id="companionSelect">
+                <option value="no">NÃO</option>
+                <option value="yes">SIM</option>
+              </select>
+            </label>
+
+            <label id="companionCountWrap" class="hidden-when-no">
+              <span>QUANTOS ACOMPANHANTES?</span>
+              <input id="companionCount" type="number" min="0" max="5" value="0" />
+            </label>
+
+            <label>
+              <span>OBSERVAÇÕES</span>
+              <textarea id="guestObservations" rows="3" placeholder="Dietas, horários, mensagens, etc."></textarea>
+            </label>
+
+            <button class="primary-button small" type="submit">[ salvar ]</button>
+          </form>
+
+          <div class="response-status" id="responseStatus" aria-live="polite">
+            <span class="status-text">AWAITING RESPONSE</span>
+          </div>
+        </section>
+
+        <section class="progress panel" id="progress">
+          <div class="panel-header">
+            <span class="panel-tag">MISSION PROGRESS</span>
+            <h3>CONFIRMATIONS</h3>
+          </div>
+
+          <div class="progress-metrics">
+            <div class="progress-total">
+              <strong id="confirmedCount">0</strong>
+              <span>/ <em id="totalGuests">0</em> GUESTS CONFIRMED</span>
+            </div>
+            <div class="mission-status" id="missionStateText">MISSION STATUS: IN PROGRESS</div>
+          </div>
+
+          <div class="progress-bar" aria-label="Progresso de confirmações">
+            <span id="progressFill"></span>
+          </div>
+        </section>
+
+        <aside class="admin-panel panel" id="adminPanel" aria-label="Painel administrativo">
+          <div class="panel-header">
+            <span class="panel-tag">ADMIN ACCESS</span>
+            <h3>ORGANIZER PANEL</h3>
+          </div>
+
+          <div class="audio-controls">
+            <button class="audio-toggle" id="bgmToggle" type="button">♪ BGM ON</button>
+            <label class="volume-control">
+              <span>VOLUME</span>
+              <input id="volumeControl" type="range" min="0" max="1" step="0.05" value="0.6" />
+            </label>
+          </div>
+
+          <div class="host-access-box">
+            <p class="micro-label">access list</p>
+            <ul class="login-access-list" id="hostAccessList" aria-label="Lista de senhas dos convidados"></ul>
+          </div>
+
+          <form id="eventForm" class="admin-form">
+            <div class="admin-grid">
+              <label>
+                <span>DATE</span>
+                <input id="formDate" name="date" type="text" value="25/11/2026" />
+              </label>
+              <label>
+                <span>TIME</span>
+                <input id="formTime" name="time" type="text" value="20:00" />
+              </label>
+              <label>
+                <span>LOCATION</span>
+                <input id="formLocation" name="location" type="text" value="PASTELARIA GIMENES" />
+              </label>
+              <label>
+                <span>ADDRESS</span>
+                <input id="formAddress" name="address" type="text" value="PASTELARIA GIMENES" />
+              </label>
+              <label class="full-span">
+                <span>GUEST LIST VISIBILITY</span>
+                <select id="guestListVisibility" name="guestListVisibility">
+                  <option value="off">OFF</option>
+                  <option value="on">ON</option>
+                </select>
+              </label>
+            </div>
+          </form>
+
+          <form id="guestForm" class="guest-form">
+            <h4>ADD NEW GUEST</h4>
+            <div class="admin-grid compact">
+              <label>
+                <span>NAME</span>
+                <input id="guestNameInput" type="text" placeholder="Guest name" required />
+              </label>
+              <label>
+                <span>LOGIN</span>
+                <input id="guestLoginInput" type="text" placeholder="guest login" required />
+              </label>
+              <label>
+                <span>PASSWORD</span>
+                <input id="guestPasswordInput" type="password" placeholder="Password" required />
+              </label>
+              <label>
+                <span>STATUS</span>
+                <select id="guestStatusInput">
+                  <option value="waiting">WAITING...</option>
+                  <option value="done">DONE</option>
+                  <option value="declined">DECLINED</option>
+                  <option value="host">HOST</option>
+                </select>
+              </label>
+              <label class="full-span">
+                <span>NOTE</span>
+                <input id="guestNoteInput" type="text" placeholder="Observation" />
+              </label>
+            </div>
+            <button class="primary-button small" type="submit">[ ADD GUEST ]</button>
+          </form>
+
+          <div class="admin-list" id="adminGuestList"></div>
+        </aside>
+
+        <section class="final-screen panel" id="contact" aria-label="Conclusão da missão">
+          <div class="panel-header">
+            <span class="panel-tag">MISSION</span>
+            <h3>COMPLETE</h3>
+          </div>
+
+          <div class="final-hero">
+            <div class="final-slab">
+              <span class="final-kicker">MISSION</span>
+              <strong>COMPLETE</strong>
+            </div>
+
+            <div class="final-status-block">
+              <span class="final-status-label">CONFIRMATION</span>
+              <strong>RECEIVED</strong>
+            </div>
+          </div>
+
+          <div class="final-line"></div>
+
+          <div class="final-message">
+            <span class="mini-kicker">SEE YOU THERE.</span>
+            <strong>NENA</strong>
+            <em class="final-subtitle">BIRTHDAY MISSION</em>
+          </div>
+
+          <div class="done-stamp-wrapper">
+            <div class="done-stamp">DONE</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  </body>
+</html>
