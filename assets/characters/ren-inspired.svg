@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="28" fill="#101215"/>
+  <path d="M120 374C165 306 208 270 256 270C304 270 346 306 392 374V442H120V374Z" fill="#B91327"/>
+  <path d="M160 186C160 111 201 72 256 72C311 72 352 111 352 186V230H160V186Z" fill="#121921"/>
+  <path d="M192 186C192 132 216 102 256 102C296 102 320 132 320 186V214H192V186Z" fill="#ECF2FF" fill-opacity="0.18"/>
+  <circle cx="256" cy="196" r="74" fill="#F0D4B9"/>
+  <path d="M186 196C186 138 214 107 256 107C298 107 326 138 326 196V206H186V196Z" fill="#0D1016"/>
+  <path d="M209 210C214 184 228 170 256 170C284 170 298 184 303 210H209Z" fill="#0D1016"/>
+  <path d="M214 235C229 245 241 250 256 250C271 250 284 246 299 235V270H214V235Z" fill="#D39A7B" fill-opacity="0.7"/>
+  <circle cx="228" cy="199" r="8" fill="#111111"/>
+  <circle cx="284" cy="199" r="8" fill="#111111"/>
+  <path d="M231 239C242 248 249 252 256 252C263 252 270 248 281 239" stroke="#7A1B2A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M180 320L232 271L260 286L220 356L180 320Z" fill="#1E2430"/>
+  <path d="M332 320L280 271L252 286L292 356L332 320Z" fill="#1E2430"/>
+  <path d="M116 446H396" stroke="#E63A4C" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  <path d="M137 134L165 92L198 136" stroke="#E63A4C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M375 134L347 92L314 136" stroke="#E63A4C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
